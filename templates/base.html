@@ -1,0 +1,133 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} | Chinmay's Portfolio</title>
+    {% tailwind_css %}
+</head>
+<body class="flex flex-col min-h-screen bg-gray-100">
+    <!-- Navigation Bar -->
+    <header class="navigation-bar">
+        <nav
+            class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white flex flex-col md:flex-row justify-between items-center py-5 px-6 md:px-24 shadow-lg">
+            <!-- Logo Section -->
+            <div class="logo flex items-center space-x-3 cursor-pointer">
+                <img src="{% static 'assets/logoCJ.png' %}" alt="logo" class="h-10 w-10 md:h-12 md:w-12">
+                <span class="text-xl md:text-3xl font-bold">Chinmay's Portfolio</span>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="text-white">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd"
+                            d="M4 5h16a1 1 0 110 2H4a1 1 0 110-2zm0 4h16a1 1 0 110 2H4a1 1 0 110-2zm0 4h16a1 1 0 110 2H4a1 1 0 110-2z" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Navigation Links (Initially Hidden on Small Screens) -->
+            <ul id="nav-links"
+                class="flex flex-col md:flex-row md:space-x-8 items-center text-lg md:text-xl font-medium mt-4 md:mt-0 md:flex">
+                <li class="py-2 md:py-0 hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'home' %}" aria-label="Navigate to Home">Home</a>
+                </li>
+                <li class="py-2 md:py-0 hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'about' %}" aria-label="Navigate to About">About</a>
+                </li>
+                <li class="py-2 md:py-0 hover:text-yellow-300 transition duration-300 pointer-events-none opacity-50">
+                    <a href="{% url 'experience' %}" aria-label="Navigate to Experience">Experience</a>
+                </li>
+                <li class="py-2 md:py-0 hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'project1' %}" aria-label="Navigate to Projects">Projects</a>
+                </li>
+                <li class="py-2 md:py-0 hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'contact' %}" aria-label="Navigate to Contact">Contact Me</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-body-content flex-grow px-6 md:px-24 py-10">
+        {% block body %}{% endblock body %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer bg-gray-800 text-white py-10 px-6 md:px-24 mt-auto">
+        <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+            <!-- Footer Logo -->
+            <div class="logo flex flex-col items-center text-center">
+                <img src="{% static 'assets/logoCJ.png' %}" alt="logo" class="h-10 w-10 md:h-12 md:w-12 mb-2">
+                <h1 class="text-xl md:text-3xl font-bold">Chinmay's Portfolio</h1>
+            </div>
+
+            <!-- Footer Links -->
+            <ul class="flex flex-col md:flex-row md:space-x-8 text-lg md:text-xl font-medium items-center">
+                <li class="hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'home' %}" aria-label="Footer link to Home">Home</a>
+                </li>
+                <li class="hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'about' %}" aria-label="Footer link to About">About</a>
+                </li>
+                <li class="hover:text-yellow-300 transition duration-300 pointer-events-none opacity-50">
+                    <a href="{% url 'experience' %}" aria-label="Footer link to Experience">Experience</a>
+                </li>
+                <li class="hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'project1' %}" aria-label="Footer link to Projects">Projects</a>
+                </li>
+                <li class="hover:text-yellow-300 transition duration-300">
+                    <a href="{% url 'contact' %}" aria-label="Footer link to Contact">Contact Me</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Social Media Section -->
+        <div class="mt-6 text-center">
+            <p class="text-lg font-medium">Connect with me:</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <!-- Social Media Links -->
+                <a href="https://www.linkedin.com/in/chinmay-jain-9826642ba/" target="_blank"
+                    class="hover:text-blue-400 transition duration-300" aria-label="LinkedIn">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M19 0H5C2.239 0 0 2.239 0 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5V5c0-2.761-2.239-5-5-5zm-8 20H8V9h3v11zm-1.5-12.25c-.966 0-1.75-.784-1.75-1.75S8.534 4.25 9.5 4.25s1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm11.5 12.25h-3v-5.5c0-1.546-.31-3.5-2.25-3.5s-2.25 1.954-2.25 3.5v5.5H9V9h3v1.765c.578-.872 1.898-2.015 4.4-2.015 4.797 0 5.6 3.157 5.6 7.248V20z" />
+                    </svg>
+                </a>
+                <a href="https://github.com/CHINMAYJAI/" target="_blank"
+                    class="hover:text-pink-400 transition duration-300" aria-label="GitHub">
+                    <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M12 .5c-6.62 0-12 5.38-12 12 0 5.303 3.438 9.8 8.205 11.385.6.112.793-.26.793-.577v-2.234c-3.338.725-4.042-1.416-4.042-1.416-.546-1.38-1.333-1.75-1.333-1.75-1.088-.745.083-.729.083-.729 1.205.085 1.838 1.237 1.838 1.237 1.07 1.836 2.806 1.305 3.493.998.108-.775.417-1.305.76-1.605-2.666-.303-5.467-1.333-5.467-5.932 0-1.31.467-2.384 1.236-3.223-.124-.303-.536-1.523.116-3.176 0 0 1.008-.322 3.3 1.23.96-.266 1.98-.398 3-.404 1.02.006 2.04.138 3 .404 2.292-1.553 3.3-1.23 3.3-1.23.653 1.653.242 2.873.118 3.176.77.839 1.236 1.913 1.236 3.223 0 4.61-2.801 5.63-5.467 5.932.343.3.652.885.652 1.782v2.633c0 .317.193.694.798.577C20.563 22.3 24 17.803 24 12.5c0-6.62-5.38-12-12-12z" />
+                    </svg>
+                </a>
+                <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGLBzRvwtdlBDdhBtxjXnstVwHXZmqTpJDTgrfkRsjHHHqjBHdsxWHtqHRNXDrztFPwqHZB"
+                    target="_blank" aria-label="Gmail" class=" hover:text-blue-500 transition duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="h-6 w-6 md:h-8 md:w-8">
+                        <path fill="#4285F4" d="M34 9l-10 7.5L14 9H6v30h10V24l8 6 8-6v15h10V9z" />
+                        <path fill="#EA4335" d="M8 39h8V24l-8-6z" />
+                        <path fill="#FBBC05" d="M40 39h-8V24l8-6z" />
+                        <path fill="#34A853" d="M34 9h-6.5L24 13l-3.5-4H14l10 7.5z" />
+                    </svg>
+            </div>
+            <!-- copyright section -->
+            <div class="pt-8">
+                <p>Copyright linkofportfolio.com | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Mobile menu toggle functionality
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+        });
+    </script>
+</body>
+
+</html>

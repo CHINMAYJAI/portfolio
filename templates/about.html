@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}About Me{% endblock title %}
+{% block body %}
+{% load static %}
+
+<h1 class="py-3 underline flex justify-center font-bold text-4xl">
+    About Me
+</h1>
+
+<div class="about-me mx-4">
+    <p class="py-2 text-justify">
+        Hi there! I am <b><i>Chinmay Jain</i></b>, a very enthusiastic BTech student in Computer Science and
+        Engineering. Your imagination may be transformed into usable products ranging from simple interfacing to rapid application
+        development.
+    </p>
+    <p class="py-2 text-justify">
+        My home page is more of a portfolio showcasing the various technologies, but for me that is not all there is to
+        coding; it's not just about the tools and equipment, it's about creating the new, the better, the changed, the
+        impact-raised types of problems.
+    </p>
+
+    <h3 class="font-bold text-xl md:text-2xl">What Drives Me</h3>
+    <p class="py-2 text-justify">
+        Being a jack of all trades, I am always trying to see how I can fuse both design and development by any means
+        possible. I have also been involved in creative processes starting from building the UI, enhancing the
+        efficiency of a database, and so on.
+    </p>
+
+    <h3 class="font-bold text-xl md:text-2xl">The Path So Far</h3>
+    <p class="py-2 text-justify">
+        My student years were tightly packed with numerous interesting tasks and information. However, I had no chance
+        to rest: there have been a lot of new tasks, which included version control and some UI/UX design and even using
+        Git Bash for work management.
+    </p>
+</div>
+
+<p class="font-bold flex justify-center py-3">Connect with me at</p>
+
+
+<div class="images flex justify-center space-x-3 pb-5 h-24">
+    
+    <a href="https://www.linkedin.com/in/chinmay-jain-9826642ba/" target="_blank"><img src="{% static 'assets/linkedIn.png' %}" alt="linkedIn image 2" class="h-10 w-10 md:h-12 md:w-12"></a>
+    
+    
+    <a href="https://github.com/CHINMAYJAI/" target="_blank"><img src="{% static 'assets/github.png' %}" alt="github image 1" class="h-10 w-10 md:h-12 md:w-12"></a>
+
+
+    <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGLBzRvwtdlBDdhBtxjXnstVwHXZmqTpJDTgrfkRsjHHHqjBHdsxWHtqHRNXDrztFPwqHZB" target="_blank"><img src="{% static 'assets/gmail.png' %}" alt="gmail image 3" class="h-10 w-10 md:h-12 md:w-12"></a>
+    
+</div>
+{% endblock body %}

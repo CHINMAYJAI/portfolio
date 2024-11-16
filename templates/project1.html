@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock title %}
+
+{% comment %} main body content of projects page {% endcomment %}
+{% block body %}
+{% load static %}
+
+<!-- Setting vertical line for hierarchy -->
+<div class="projects-section flex justify-center items-center mb-8">
+    <h2 class="text-3xl font-medium">Projects:</h2>
+</div>
+
+<!-- Horizontal line -->
+<div class="horizontal-line pt-8">
+    <hr class="border-t-2 border-gray-800 opacity-100 mx-8">
+</div>
+
+<!-- Projects container -->
+<div class="projects-container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-4 gap-8 mt-8 px-4">
+
+    <!-- Project 1 -->
+    <div class="project flex flex-col items-center justify-between bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300">
+        <span class="font-medium text-lg">Backend</span>
+        <img class="h-14 mt-4" src="{% static "assets/mongodb_image.png" %}" alt="mongodb_image">
+        <span class="text-center mt-2">Contact Book</span>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project flex flex-col items-center justify-between bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300">
+        <span class="font-medium text-lg">Web Development</span>
+        <img class="h-16 mt-4" src="{% static "assets/digital_coder_logo.png" %}" alt="digital_coder">
+        <span class="text-center mt-2">Digital Coder: The All-Rounder</span>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project flex flex-col items-center justify-between bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300">
+        <span class="font-medium text-lg">Data Analysis</span>
+        <img class="h-14 mt-4" src="{% static "assets/numpy_image.png" %}" alt="Numpy_image">
+        <span class="text-center mt-2">Slicing and Indexing in Array</span>
+        <span class="text-center mt-2">Statistical Analysis</span>
+        <span class="text-center mt-2">Descriptive Statistical Analysis</span>
+        <img class="h-14 mt-2" src="{% static "assets/pandas_image.png" %}" alt="pandas_image">
+        <span class="text-center mt-2">Personal Expense Tracker Version 1.0</span>
+        <span class="text-center mt-2">Personal Expense Tracker Version 2.0</span>
+        <span class="text-center mt-2">Bakery Management System Version 1.0</span>
+        <span class="text-center mt-2">Bakery Management System Version 2.0</span>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project flex flex-col items-center justify-between bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300">
+        <span class="font-medium text-lg">Computational Programming</span>
+        <img class="h-14 mt-4" src="{% static "assets/numpy_image.png" %}" alt="Numpy_image">
+        <span class="text-center mt-2">Summation of Matrices</span>
+        <span class="text-center mt-2">Polynomial Operations Version 1.0</span>
+        <span class="text-center mt-2">Polynomial Operations Version 2.0</span>
+    </div>
+
+</div>
+
+<!-- Next Button -->
+<div class="button flex justify-center pt-16 pb-32">
+    <a href="{% url 'project2' %}">
+        <button type="button" class="bg-black text-white py-3 px-10 font-medium text-xl rounded-full hover:bg-gray-700 transition duration-300">Next >></button>
+    </a>
+</div>
+
+{% endblock body %}

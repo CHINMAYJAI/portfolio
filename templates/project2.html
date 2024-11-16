@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block title %}Projects{% endblock title %}
+
+{% comment %} main body content of projects page {% endcomment %}
+{% block body %}
+{% load static %}
+
+<!-- furthur projects -->
+<div class="projects-section flex justify-center items-center">
+    <h2 class="text-3xl font-medium mb-4">Projects:</h2>
+</div>
+
+<!-- horizontal line -->
+<!-- setting padding at top 8 -->
+<div class="horizontal-line pt-8">
+    <!-- making horizontal line darker and putting margin at x-axis for 8 -->
+    <hr class="border-t-2 border-gray-800 opacity-100 mx-8">
+</div>
+
+
+<div class="projects-container grid grid-cols-1 mt-8 px-4">
+    <!-- Project 1 with vertical lines on both sides -->
+    <!-- binding all the content into the flex box -->
+    <div class="project flex flex-col items-center justify-between bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition duration-300">
+        <span class="font-medium">Basic Development</span>
+        <img class="h-14" src="{% static "assets/python_image.png" %}" alt="python_image">
+        <span>Snake water and gun</span>
+        <span>Passcode Generator</span>
+        <span>Leave Application</span>
+        <img class="h-14" src="{% static "assets/c_image.png" %}" alt="c_image">
+        <span>Guessing the number game</span>
+        <img class="h-14" src="{% static "assets/js_image.png" %}" alt="js_image">
+        <span>Guessing the number game</span>
+        <span>Tell me a joke</span>
+        <span>Snake Water and gun</span>
+    </div>
+</div>
+
+
+<!-- Back Button for going to previous page -->
+<div class="button flex justify-center pt-10">
+    <a href="{% url "project1" %}">
+        <button type="button" class="bg-black text-white py-3 px-10 font-medium text-xl rounded-full hover:bg-gray-700 transition duration-300">
+            << Back</button>
+    </a>
+</div>
+
+{% endblock body %}
